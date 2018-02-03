@@ -217,6 +217,8 @@ ul.chzn-choices li.search-field input
 .grocerycrud-container {
 	font-family: Verdana,Arial,sans-serif;
 	font-size:14px;
+	padding-left: 25px; 
+	padding-right: 25px; 
 }
 
 .datatables div.form-div{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;color: #444;}

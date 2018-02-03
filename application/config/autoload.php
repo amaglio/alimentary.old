@@ -53,7 +53,8 @@ $autoload['packages'] = array();
 */
 
 
-$autoload['libraries'] = array('database','session','form_validation');
+$autoload['libraries'] = array( 'database', 'session','form_validation','MY_Form_validation' );
+
 //$autoload['libraries'] = array('form_validation', 'session');
 
 /*
@@ -65,7 +66,7 @@ $autoload['libraries'] = array('database','session','form_validation');
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url','chrome_logger','general_helper');
+$autoload['helper'] = array('url','chrome_logger','general_helper', 'security'	);
 //$autoload['helper'] = array('url','chrome_logger','security','general_helper');
 
 /*
