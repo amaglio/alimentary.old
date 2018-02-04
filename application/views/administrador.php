@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Alimentary | Mix y frutos secos</title>
 <?php 
 foreach($css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
@@ -51,6 +53,10 @@ foreach($css_files as $file): ?>
     color: #065b73;
     background-color: #e7e7e7;
 }
+
+.report-div.success{
+      background-color: white !important;
+}
 </style>
 
 </head>
@@ -83,8 +89,12 @@ foreach($css_files as $file): ?>
         	<a href='<?php echo site_url('administrador/tipos_producto')?>'><i  class="fa fa-tags" ></i> Tipo de producto</a>
         </li>
         <li>
+          <a href='<?php echo site_url('administrador/promociones')?>'><i class="fa fa-bullhorn"></i> Promociones</a>
+        </li>
+        <li>
         	<a href='<?php echo site_url('login/logout')?>'><i  class="fa fa-power-off" ></i> Salir</a>
         </li>
+        
       </ul>
   
     </div><!-- /.navbar-collapse -->

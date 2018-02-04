@@ -14,7 +14,7 @@ class Administrador extends CI_Controller {
 
 	public function _example_output($output = null)
 	{
-		$this->load->view('example.php',(array)$output);
+		$this->load->view('administrador.php',(array)$output);
 	}
  
 
@@ -38,6 +38,8 @@ class Administrador extends CI_Controller {
 
 			$crud->set_relation('id_tipo_producto','tipo_producto','descripcion');
 
+			$crud->set_field_upload('foto','assets/img/productos');
+
 			$output = $crud->render();
 
 			$this->_example_output($output);
@@ -59,6 +61,24 @@ class Administrador extends CI_Controller {
 
 			$crud->display_as('id_tipo_producto','Tipo de producto'); 
 			$crud->unset_delete();
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+	}
+
+	public function promociones()
+	{
+			$crud = new grocery_CRUD();
+
+			$crud->set_theme('datatables');
+			$crud->set_table('promocion');
+			$crud->set_subject('promociones');
+			$crud->required_fields('descripcion');
+			$crud->columns('descripcion','precio' );
+
+			$crud->display_as('id_tipo_producto','Tipo de producto'); 
+ 
 
 			$output = $crud->render();
 

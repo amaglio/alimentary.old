@@ -46,7 +46,11 @@
         color: red;
         border: 1px solid rgba(255, 0, 0, 0.38);
       }
-          
+      
+      .mu-main-navbar .mu-main-nav li a {
+        color: #213233 !important;
+        font-weight: bold !important;
+      } 
     </style>
  
   </head>
