@@ -108,11 +108,13 @@ foreach($css_files as $file): ?>
     </div>
 
 
-    <footer class="footer" style="border-top: 1px solid green ;">
+  
+  <!-- <footer class="footer" style="border-top: 1px solid green ;     position: inherit;
+    margin-top: 20px;">
   
         <span class="text-muted" style="color: black ">&copy; 2018 Alimentarymix.com </span>
       
-    </footer>
+    </footer> -->
 
 </body>
 

@@ -31,7 +31,7 @@ class Administrador extends CI_Controller {
 			$crud->set_theme('datatables');
 			$crud->set_table('producto');
 			$crud->set_subject('Producto');
-			$crud->required_fields('nombre');
+			$crud->required_fields('nombre', 'id_tipo_producto');
 			$crud->columns('nombre','descripcion', 'id_tipo_producto', 'foto', 'precio' );
 
 			$crud->display_as('id_tipo_producto','Tipo de producto');
@@ -75,9 +75,14 @@ class Administrador extends CI_Controller {
 			$crud->set_table('promocion');
 			$crud->set_subject('promociones');
 			$crud->required_fields('descripcion');
-			$crud->columns('descripcion','precio' );
+			$crud->columns('titulo', 'descripcion','precio', 'foto' );
+
+		 
+			$crud->change_field_type('description', 'text');
 
 			$crud->display_as('id_tipo_producto','Tipo de producto'); 
+
+			$crud->set_field_upload('foto','assets/img/promociones');
  
 
 			$output = $crud->render();
