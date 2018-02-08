@@ -9,7 +9,6 @@
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?=base_url()?>assets/img/favicon.ico" type="image/x-icon">
-
     <!-- Font awesome -->
     <link href="<?=base_url()?>assets/css/font-awesome.css" rel="stylesheet">
     <!-- Bootstrap -->
@@ -25,7 +24,8 @@
 
     <!-- Main style sheet -->
     <link href="<?=base_url()?>assets/css/style.css" rel="stylesheet">    
-
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  
     <!-- Prata for body  -->
     <link href='https://fonts.googleapis.com/css?family=Prata' rel='stylesheet' type='text/css'>
@@ -34,6 +34,9 @@
     <!-- Open Sans for title -->
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     
+    <script type="text/javascript">
+            CI_ROOT = "<?=base_url()?>";
+    </script>
     
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
@@ -399,46 +402,47 @@
               <span class="mu-subtitle">Realizá tu</span>
               <h2>Consulta</h2>
             </div>
+            
+            <form  id="contactForm" name="sentMessage" >
+              <div class="mu-reservation-content">
+                <p> Envianos tu mensaje, tus pregunta o realiza tus pedidos.</p>
 
-            <div class="mu-reservation-content">
-              <p> Envianos tu mensaje, tus pregunta o realiza tus pedidos.</p>
-
-              <div class="col-md-6">
-                <div class="mu-reservation-left">
-                  <form class="mu-reservation-form">
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">                       
-                          <input type="text" class="form-control" placeholder="Nombre">
+                <div class="col-md-6">
+                  <div class="mu-reservation-left">
+                    
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">                       
+                            <input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre" >
+                          </div>
                         </div>
+                         <div class="col-md-12">
+                          <div class="form-group">                       
+                            <input name="apellido" id="apellido"  type="text" class="form-control" placeholder="Apellido">
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <div class="form-group">                        
+                            <input name="email" id="email" type="email" class="form-control" placeholder="Email" >
+                          </div>
+                        </div> 
                       </div>
-                       <div class="col-md-12">
-                        <div class="form-group">                       
-                          <input type="text" class="form-control" placeholder="Apellido">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">                        
-                          <input type="email" class="form-control" placeholder="Email">
-                        </div>
-                      </div> 
-                      
-                     
-                    </div>
-                  </form>    
+                       
+                  </div>
                 </div>
-              </div>
 
-              <div class="col-md-6  ">
-                 <div class="col-md-12" style="padding-top: 30px;">
-                    <div class="form-group">
-                      <textarea style="    border-radius: 0px;" class="form-control" cols="30" rows="7" placeholder="Tu mensaje"></textarea>
+                <div class="col-md-6  ">
+                   <div class="col-md-12" style="padding-top: 30px;">
+                      <div class="form-group">
+                        <textarea name="mensaje" id="mensaje" style="border-radius: 0px;" cols="30" rows="7"  ></textarea>
+                      </div>
                     </div>
-                  </div>
-                  <div class="col-md-12"  style="text-align: center;">
-                    <button type="submit" class="mu-readmore-btn">Enviar</button>
-                  </div>
-              </div>
+                    <div class="col-md-12"  style="text-align: center;">
+                      <button type="submit" class="mu-readmore-btn">Enviar</button>
+                    </div>
+                </div>
+              </form> 
+
             </div>
           </div>
         </div>
@@ -482,6 +486,9 @@
  
   <!-- Custom js -->
   <script type="text/javascript" src="<?=base_url()?>assets/js/custom.js"></script> 
+
+  <!-- Email js -->
+  <script type="text/javascript" src="<?=base_url()?>assets/js/contact_me.js"></script> 
 
   </body>
 </html>

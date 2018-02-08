@@ -20,7 +20,7 @@ if(!function_exists('mensaje_resultado'))
 
 if(!function_exists('enviar_email'))
 {
-    function enviar_email($email_to, $email_operador, $subject, $texto, $nombre_operador=NULL, $nombre_persona=NULL )
+    function enviar_email($email_to )
     {   
         $CI =& get_instance();
 
