@@ -25,6 +25,7 @@ class Home extends CI_Controller {
 
 			chrome_log("No paso validacion");
 			$this->session->set_flashdata('mensaje', 'Error: no paso la validacion.');
+			$return["error"] = false;
 
 		else:
 
@@ -68,18 +69,20 @@ class Home extends CI_Controller {
 	        if( $this->email->send() ):
 
 	            chrome_log("ENVIO EL EMAIL");  
-	         	return true;
+	         	$return["error"] = false;
 
 	        else:
 	            
 	            chrome_log("NO ENVIO EL EMAIL"); 
-	        	return false;
+	        	$return["error"] = true;
+	        	
 
 	        endif;
 
 
 		endif;
 
+		print json_encode($return);   
 
 	}
 

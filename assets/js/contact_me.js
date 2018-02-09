@@ -9,7 +9,10 @@ $(function() {
     var apellido = $("input#apellido").val();
     var email = $("input#email").val();
     var mensaje = $("textarea#mensaje").val(); 
- 
+    
+    $("#sendMessageButton").prop("disabled", true);
+    $("#cargando").show();
+
     $this = $("#sendMessageButton");
     $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
 
@@ -23,7 +26,9 @@ $(function() {
               type: 'POST',
               dataType: 'JSON',
               success: function(data)
-             {
+             {  
+                $("#cargando").hide();
+                
                 if(data.error == false)
                 {
                   //alert("Bien");
@@ -48,9 +53,11 @@ $(function() {
                   //clear all fields
                   $('#contactForm').trigger("reset");
                 }
+
+
               },
               error: function(x, status, error){
-                  //alert("Error.");
+                  $("#cargando").hide();
                   $('#success').html("<div class='alert alert-danger'>");
                   $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                     .append("</button>");

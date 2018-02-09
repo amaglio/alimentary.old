@@ -47,6 +47,8 @@
     <![endif]-->
 
     <style type="text/css">
+
+
         a.icono_menu{
     
             background-color: #299887;
@@ -63,6 +65,50 @@
         {
           color: white !important;
         }
+
+        .media:first-child 
+        {
+          min-height:200px;
+        }
+
+        #logo_cel
+        {
+          display:none;
+        }
+
+        #cargando
+        {
+          display:none;
+        }
+
+        #mu-about-us{
+          padding-bottom: 0px;
+        }
+
+        #mu-restaurant-menu{
+          padding-bottom: 0px;
+        }
+
+        #mu-gallery{
+          padding-bottom: 0px;
+        } 
+
+        @media screen and (max-width:450px) {
+
+          #logo_cel
+          {
+            display:block;
+          }
+
+           #logo_web
+          {
+            display:none;
+          }
+
+        }
+
+
+
     </style>
 
   </head>
@@ -88,7 +134,9 @@
           </button>
 
           <!-- LOGO -->       
-          <a class="navbar-brand " href="index.html"><img class="logo_web" src="<?=base_url()?>assets/img/logo.jpg" alt="Logo img"></a>  
+          <a class="navbar-brand " href="index.html"><img class="logo_web" id="logo_web"  src="<?=base_url()?>assets/img/logo.jpg" alt="Logo img">
+                                                     <img class="logo_web" id="logo_cel"  src="<?=base_url()?>assets/img/logo_solo.png" alt="Logo img">
+          </a>  
          
 
         </div>
@@ -413,17 +461,17 @@
                       <div class="row">
                         <div class="col-md-12">
                           <div class="form-group">                       
-                            <input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre" >
+                            <input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre" required>
                           </div>
                         </div>
                          <div class="col-md-12">
                           <div class="form-group">                       
-                            <input name="apellido" id="apellido"  type="text" class="form-control" placeholder="Apellido">
+                            <input name="apellido" id="apellido"  type="text" class="form-control" placeholder="Apellido" required>
                           </div>
                         </div>
                         <div class="col-md-12">
                           <div class="form-group">                        
-                            <input name="email" id="email" type="email" class="form-control" placeholder="Email" >
+                            <input name="email" id="email" type="email" class="form-control" placeholder="Email" required>
                           </div>
                         </div> 
                       </div>
@@ -434,11 +482,12 @@
                 <div class="col-md-6  ">
                    <div class="col-md-12" style="padding-top: 30px;">
                       <div class="form-group">
-                        <textarea name="mensaje" id="mensaje" style="border-radius: 0px;" cols="30" rows="7"  ></textarea>
+                        <textarea name="mensaje" id="mensaje" style="border-radius: 4px; width: -webkit-fill-available;" rows="7" required></textarea>
                       </div>
                     </div>
                     <div class="col-md-12"  style="text-align: center;">
-                      <button type="submit" class="mu-readmore-btn">Enviar</button>
+                      <div id="success"></div>
+                      <button  id="sendMessageButton"  type="submit" class="mu-readmore-btn">Enviar <img id="cargando" style="width:20px; " class="logo_web" src="<?=base_url()?>assets/img/loading.gif" alt="Logo img"></button>
                     </div>
                 </div>
               </form> 
