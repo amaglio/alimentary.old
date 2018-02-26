@@ -8,7 +8,7 @@ class Administrador extends CI_Controller {
 
 		$this->load->database();
 		$this->load->helper('url');
-
+		$this->load->model('Administrador_model'); 
 		$this->load->library('grocery_CRUD');
 	}
 
@@ -22,6 +22,65 @@ class Administrador extends CI_Controller {
 	{
 		$this->_example_output((object)array('output' => '' , 'js_files' => array() , 'css_files' => array()));
 	}
+
+
+	public function educacion()
+	{
+		try{
+			$crud = new grocery_CRUD();
+
+			$crud->set_theme('datatables');
+			$crud->set_table('educacion');
+			$crud->set_subject('Educacion');
+			$crud->required_fields('nombre', 'id_tipo_educacion');
+			$crud->columns('nombre','descripcion', 'id_tipo_educacion', 'nombre', 'cursada', 'certificacion' , 'contenidos_centrales', 'docentes' , 'archivo_programa'  );
+
+			$crud->display_as('id_tipo_educacion','Tipo de educacion');
+
+			$crud->set_relation('id_tipo_educacion','tipo_educacion','descripcion');
+ 			
+ 			$crud->set_field_upload('archivo_programa','assets/documentos/programas');
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+
+		}catch(Exception $e){
+			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+	}
+
+	public function investigacion()
+	{
+		try{
+			$crud = new grocery_CRUD();
+
+			$crud->set_theme('datatables');
+			$crud->set_table('investigacion');
+			$crud->set_relation('id_tipo_investigacion','tipo_investigacion','descripcion');
+
+			$crud->set_subject('Investigación');
+			$crud->required_fields('titulo', 'id_tipo_investigacion');
+			$crud->columns('titulo','sito_publico', 'fecha', 'abstract', 'id_investigacion' );
+
+			$crud->display_as('id_tipo_investigacion','Tipo de investigación');
+			$crud->display_as('id_investigacion','Autores');
+
+			$crud->callback_column('id_investigacion',array($this,'add_field_traer_autores'));
+
+			$crud->add_action('Editar Autores', '', 'Administrador/editar_autores');
+
+ 			//$crud->set_field_upload('archivo_programa','assets/documentos/investigaciones');
+
+			$output = $crud->render();
+
+			$this->_example_output($output);
+
+		}catch(Exception $e){
+			show_error($e->getMessage().' --- '.$e->getTraceAsString());
+		}
+	}
+
 
 	public function productos()
 	{
@@ -49,46 +108,24 @@ class Administrador extends CI_Controller {
 		}
 	}
 
-	public function tipos_producto()
+	function add_field_traer_autores($value, $row)
 	{
-			$crud = new grocery_CRUD();
+		$autores = $this->Administrador_model->traer_autores_investigacion($value);
 
-			$crud->set_theme('datatables');
-			$crud->set_table('tipo_producto');
-			$crud->set_subject('Tipo de producto');
-			$crud->required_fields('descripcion');
-			$crud->columns('id_tipo_producto','descripcion' );
+		$var_autores = '';
 
-			$crud->display_as('id_tipo_producto','Tipo de producto'); 
-			$crud->unset_delete();
+		foreach ($autores as $row) 
+		{
+			$var_autores .= $row['nombre']." <br>";
+		}
 
-			$output = $crud->render();
-
-			$this->_example_output($output);
+		return $var_autores;
 	}
 
-	public function promociones()
+	function add_field_traer_autores($value, $row)
 	{
-			$crud = new grocery_CRUD();
-
-			$crud->set_theme('datatables');
-			$crud->set_table('promocion');
-			$crud->set_subject('promociones');
-			$crud->required_fields('descripcion');
-			$crud->columns('titulo', 'descripcion','precio', 'foto' );
-
-		 
-			$crud->change_field_type('description', 'text');
-
-			$crud->display_as('id_tipo_producto','Tipo de producto'); 
-
-			$crud->set_field_upload('foto','assets/img/promociones');
- 
-
-			$output = $crud->render();
-
-			$this->_example_output($output);
+		 echo "valor".$value;
 	}
 
- 
+
 }

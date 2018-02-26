@@ -48,6 +48,10 @@
 
     <style type="text/css">
 
+        .item_producto{
+          height: 200px !important;
+        }
+
 
         a.icono_menu{
     
@@ -68,7 +72,7 @@
 
         .media:first-child 
         {
-          min-height:200px;
+          max-height:200px;
         }
 
         #logo_cel
@@ -93,6 +97,43 @@
           padding-bottom: 0px;
         } 
 
+        .media-object{
+            border: 1px solid rgba(204, 204, 204, 0.55) !important;
+            padding: 3px !important;
+            width: 200px;
+            height: 200px;
+        }
+        }
+
+        .mu-title{
+          margin-bottom: 0px;
+        } 
+
+        .item_menu{
+          border-right: rgba(210, 210, 210, 0.61) 1px solid ;
+        }
+
+        img.img_carrusel{
+          height: 800px !important;
+        }
+
+        .media-heading {
+              font-size: 20px;
+              margin-bottom: 10px;
+        }
+
+        .mu-menu-price   {
+               font-size: 16px;
+            font-weight: bold;
+            letter-spacing: 1.5px;
+            line-height: 20px;
+            color: #FFA500;
+        }
+
+        .promocion_precio{
+            font-size: 20px; font-weight: bold;  letter-spacing: 1.5px; line-height: 20px; color: #FFA500;
+        }
+
         @media screen and (max-width:450px) {
 
           #logo_cel
@@ -105,9 +146,100 @@
             display:none;
           }
 
+          .mu-slider-small-title
+          {
+                font-size: 60px !important;
+          }
+
+          .mu-menu-item-nav li .media .media-left a, .mu-menu-item-nav li .media .media-left a img {
+             
+               width: auto; 
+              height: auto;  
+          }
+
+          .item_producto{
+            height: auto !important;
+          }
+
+          .media-object{
+            height: auto !important;
+            width: auto !important; 
+          }
+
+          img.img_carrusel{
+            height: 300px !important;
+          }
+
+          .descripcion_promocion_slider{
+            display: block;
+          }
+
+          .promocion_precio{
+              text-align: center;
+          }
+          
+          .promocion_titulo{
+              text-align: center;
+          }
+          
+          .media-heading { 
+              padding-top: 10px;
+          }
+
+          .iframe_fb{
+            width: auto;
+          }
+
+          #mu-about-us{
+               padding-top: 140px;
+          }
+
+          #mu-restaurant-menu{
+                padding-top: 140px;
+          }
+
+          #mu-gallery{
+                padding-top: 140px;
+          } 
+
+          #mu-reservation{
+                padding-top: 140px;
+          } 
+
+          .item_menu{
+                /*padding-top: 140px;*/
+          } 
+
+          .item_menu{
+              border-right: none;
+              border-bottom: rgba(210, 210, 210, 0.61) 1px solid;
+            }
+
+            .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+                  margin-top: 20px;
+            }
+
+            .mu-footer-social{
+              padding-top: 20px;
+            }
+
+            a.icono_red_social{
+             
+              font-size: 25px !important;
+                  margin-right: 20px !important;
+            }
+
         }
 
+        /*
+            .item_menu{
+              border-right: none;
+            }
 
+            .navbar-default .navbar-collapse, .navbar-default .navbar-form{
+                  margin-top: 20px;
+            }
+        */
 
     </style>
 
@@ -120,7 +252,7 @@
     </a>
   <!-- END SCROLL TOP BUTTON -->
 
-  <!-- Header -->
+  <!-- MENU -->
   <header id="mu-header">  
     <nav class="navbar navbar-default mu-main-navbar" role="navigation">  
       <div class="container">
@@ -142,16 +274,16 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul id="top-menu" class="nav navbar-nav navbar-right mu-main-nav">
-            <li><a href="#mu-slider">INICIO</a></li>
-            <li><a href="#mu-about-us">PROMOCIONES</a></li>
-            <li><a href="#mu-restaurant-menu">MIX y GRANOLAS</a></li>   
-            <li><a href="#mu-gallery">FRUTOS SECOS</a></li>                    
-            <li><a href="#mu-reservation">CONTACTANOS</a></li>                       
+            <li class="item_menu"><a href="#mu-slider">INICIO</a></li>
+            <li class="item_menu"><a href="#mu-about-us">PROMOCIONES</a></li>
+            <li class="item_menu"><a href="#mu-restaurant-menu">MIX y GRANOLAS</a></li>   
+            <li class="item_menu"><a href="#mu-gallery">FRUTOS SECOS</a></li>                    
+            <li ><a href="#mu-reservation">CONTACTANOS</a></li>                       
             <li>  
                 <div class="mu-footer-social">
-                    <a class="icono_menu" href="#"><span class="fa fa-facebook "></span></a>
-                    <a class="icono_menu" href="#"><span class="fa fa-twitter  "></span></a> 
-                    <a class="icono_menu" href="#"><span class="fa fa-youtube "></span></a>
+                    <a class="icono_menu icono_red_social" href="https://www.facebook.com/alimentarymix/"><span class="fa fa-facebook "></span></a>
+                    <a class="icono_menu icono_red_social" href="https://www.instagram.com/alimentarymix/"><span class="fa fa-instagram  "></span></a> 
+                    <a class="icono_menu icono_red_social" href="#"><span class="fa fa-youtube "></span></a>
                 </div>
             </li> 
           </ul>                            
@@ -164,8 +296,9 @@
   <section id="mu-slider">
     <div class="mu-slider-area"> 
       <div class="mu-top-slider">
+        
         <div class="mu-top-slider-single">
-          <img src="<?=base_url()?>assets/img/slider/home1.jpg" alt="img">
+          <img class="img_carrusel" src="<?=base_url()?>assets/img/slider/home1.jpg" alt="img">
  
           <div class="mu-top-slider-content">
             <span class="mu-slider-small-title">Bienvenidos</span>
@@ -175,30 +308,26 @@
           </div>
  
         </div>
- 
-        <div class="mu-top-slider-single">
-          <img src="<?=base_url()?>assets/img/slider/home2.jpg" alt="img">
- 
-          <div class="mu-top-slider-content">
-            <span class="mu-slider-small-title">Mix Energetico</span>
-            <h2 class="mu-slider-title">$167</h2>
-            <p>No te pierdas esta promocion de energia</p> 
-          </div>
-        
-        </div>
- 
-        <div class="mu-top-slider-single">
-          <img src="<?=base_url()?>assets/img/slider/home3.jpg" alt="img">
-          <!-- Top slider content -->
-          <div class="mu-top-slider-content">
-            <span class="mu-slider-small-title">Granola</span>
-            <h2 class="mu-slider-title">$250</h2>
-            <p>La granola es la mejor forma de empezar tus desayunos.</p>           
-            
-          </div>
-          
-        </div>
- 
+
+        <?php foreach ($promociones as $row): ?>
+
+          <?php if($row['carrousel'] == 1) ?>
+
+              <div class="mu-top-slider-single">
+             
+                <img class="img_carrusel" src="<?=base_url()?>assets/img/promociones/<?=$row['foto']?>" alt="img">
+       
+                <div class="mu-top-slider-content">
+                  <span class="mu-slider-small-title"><?=$row['titulo']?></span>
+                  <h2 class="mu-slider-title">$<?=$row['precio']?></h2>
+                  <p class="descripcion_promocion_slider"><?=$row['descripcion']?></p> 
+                </div>
+              
+              </div>
+
+        <?php endforeach; ?>
+
+         
       </div>
     </div>
   </section>
@@ -218,14 +347,15 @@
             <?php foreach ($promociones as $row): ?>
 
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-5">
                  <div class="mu-about-us-left">     
-                  <img src="<?=base_url()?>assets/img/promociones/<?=$row['foto']?>" alt="img">           
-                  </div>
+                    <img src="<?=base_url()?>assets/img/promociones/<?=$row['foto']?>" alt="img">           
+                    </div>
                 </div>
                 <div class="col-md-6">
                    <div class="mu-about-us-right">
-                   <h3><?=$row['titulo']?> $<?=$row['precio']?> </h3>
+                   <h3 class="promocion_titulo"><?=$row['titulo']?> </h3>
+                   <h4 class="promocion_precio">$<?=$row['precio']?> </h3>
                    <p><?=$row['descripcion']?></p> 
                   </div>
                 </div>
@@ -264,7 +394,7 @@
                         $cantidad_mix = count($mix_granola);
                         $contador_mix = 0;
                      ?>
-                     <div class="col-md-6">
+                     <div class="col-md-6 col-xs-12">
 
                         <div class="mu-tab-content-left">
 
@@ -273,14 +403,14 @@
                           <?php for ($i=0; $i <  ($cantidad_mix / 2); $i++):  ?>
                          
                             <li>
-                              <div class="media">
-                                <div class="media-left">
-                                  <a href="#">
+                              <div class="item_producto">
+                                <div class="col-md-5 col-xs-12">
+                                  <a>
                                     <img class="media-object" src="<?=base_url()?>assets/img/productos/<?=$mix_granola[$i]['foto']?>" alt="img">
                                   </a>
                                 </div>
-                                <div class="media-body">
-                                  <h4 class="media-heading"><a href="#"><?=$mix_granola[$i]['nombre']?></a></h4>
+                                <div class="col-md-7" col-xs-12>
+                                  <h4 class="media-heading"><a ><?=$mix_granola[$i]['nombre']?></a></h4>
                                   <span class="mu-menu-price">$<?=$mix_granola[$i]['precio']?></span>
                                   <p><?=$mix_granola[$i]['descripcion']?></p>
                                 </div>
@@ -293,23 +423,23 @@
                         </div>
                       </div>
 
-                      <div class="col-md-6">
+                      <div class="col-md-6 col-xs-12">
 
-                        <div class="mu-tab-content-right">
+                        <div class="mu-tab-content-left">
 
                           <ul class="mu-menu-item-nav">
                           
                           <?php for( $i = ($cantidad_mix / 2); $i < $cantidad_mix ; $i++):  ?>
                          
                             <li>
-                              <div class="media">
-                                <div class="media-left">
-                                  <a href="#">
+                              <div class="item_producto">
+                                <div class="col-md-5 col-xs-12">
+                                  <a  >
                                     <img class="media-object" src="<?=base_url()?>assets/img/productos/<?=$mix_granola[$i]['foto']?>" alt="img">
                                   </a>
                                 </div>
-                                <div class="media-body">
-                                  <h4 class="media-heading"><a href="#"><?=$mix_granola[$i]['nombre']?></a></h4>
+                                <div class="col-md-7 col-xs-12">
+                                  <h4 class="media-heading"><a ><?=$mix_granola[$i]['nombre']?></a></h4>
                                   <span class="mu-menu-price">$<?=$mix_granola[$i]['precio']?></span>
                                   <p><?=$mix_granola[$i]['descripcion']?></p>
                                 </div>
@@ -347,7 +477,7 @@
           <div class="mu-restaurant-menu-area">
 
             <div class="mu-title">
-              <span class="mu-subtitle">Proba nuestros</span>
+              <span class="mu-subtitle">Probá nuestros</span>
               <h2>Frutos secos</h2>
             </div>
             
@@ -373,14 +503,14 @@
                           <?php for ($i=0; $i <  ($cantidad_frutos / 2); $i++):  ?>
                          
                             <li>
-                              <div class="media">
-                                <div class="media-left">
-                                  <a href="#">
+                              <div class="item_producto">
+                               <div class="col-md-5 col-xs-12">
+                                  <a>
                                     <img class="media-object" src="<?=base_url()?>assets/img/productos/<?=$frutos_secos[$i]['foto']?>" alt="img">
                                   </a>
                                 </div>
-                                <div class="media-body">
-                                  <h4 class="media-heading"><a href="#"><?=$frutos_secos[$i]['nombre']?></a></h4>
+                                <div class="col-md-7 col-xs-12">
+                                  <h4 class="media-heading"><a ><?=$frutos_secos[$i]['nombre']?></a></h4>
                                   <span class="mu-menu-price">$<?=$frutos_secos[$i]['precio']?></span>
                                   <p><?=$frutos_secos[$i]['descripcion']?></p>
                                 </div>
@@ -395,21 +525,21 @@
 
                       <div class="col-md-6">
 
-                        <div class="mu-tab-content-right">
+                        <div class="mu-tab-content-left">
 
                           <ul class="mu-menu-item-nav">
                           
                           <?php for( $i = ($cantidad_frutos / 2); $i < $cantidad_frutos ; $i++):  ?>
                          
                             <li>
-                              <div class="media">
-                                <div class="media-left">
-                                  <a href="#">
-                                    <img class="media-object" style="height: 100px !important" src="<?=base_url()?>assets/img/productos/<?=$frutos_secos[$i]['foto']?>" alt="img">
+                              <div class="item_producto">
+                                <div class="col-md-5 col-xs-12">
+                                  <a >
+                                    <img class="media-object"  src="<?=base_url()?>assets/img/productos/<?=$frutos_secos[$i]['foto']?>" alt="img">
                                   </a>
                                 </div>
-                                <div class="media-body">
-                                  <h4 class="media-heading"><a href="#"><?=$frutos_secos[$i]['nombre']?></a></h4>
+                                <div class="col-md-7 col-xs-12">
+                                  <h4 class="media-heading"><a ><?=$frutos_secos[$i]['nombre']?></a></h4>
                                   <span class="mu-menu-price">$<?=$frutos_secos[$i]['precio']?></span>
                                   <p><?=$frutos_secos[$i]['descripcion']?></p>
                                 </div>
@@ -439,11 +569,51 @@
     </div>
   </section>
 
+  <!-- Comentarios clientes facebok -->
+  <section id="mu-gallery">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="mu-restaurant-menu-area">
+
+            <div class="mu-title">
+              <span class="mu-subtitle">Qué dicen</span>
+              <h2>Nuestros clientes</h2>
+            </div>
+            
+            <div class="mu-restaurant-menu-content">
+                
+                <?php foreach ($opiniones_facebook as $row) :  ?>
+
+                <div class="col-md-6">
+
+                   <?php //$iframe = str_replace('width="500"', 'width="auto"', $row['iframe'] ); ?>
+                   <?php //$iframe =   $row['iframe']; ?>
+
+                   <?php //$iframe = str_replace('width="500"', 'width="auto"', $row['iframe'] ); ?>
+
+                   <?php $iframe = str_replace('<iframe', '<iframe class="iframe_fb" ', $row['iframe'] ); ?>
+                   <?php echo $iframe; ?>
+                
+                </div>
+
+                <? endforeach; ?>
+                
+
+                
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> 
+
   <!-- Contacto -->
   <section id="mu-reservation">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-12 col-xs-12">
           <div class="mu-reservation-area">
 
             <div class="mu-title">
@@ -455,41 +625,42 @@
               <div class="mu-reservation-content">
                 <p> Envianos tu mensaje, tus pregunta o realiza tus pedidos.</p>
 
-                <div class="col-md-6">
+                <div class="col-md-6 col-xs-12">
                   <div class="mu-reservation-left">
-                    
-                      <div class="row">
-                        <div class="col-md-12">
+                  
+                        <div class="col-md-12 col-xs-12">
                           <div class="form-group">                       
                             <input name="nombre" id="nombre" type="text" class="form-control" placeholder="Nombre" required>
                           </div>
                         </div>
-                         <div class="col-md-12">
+                         <div class="col-md-12 col-xs-12">
                           <div class="form-group">                       
                             <input name="apellido" id="apellido"  type="text" class="form-control" placeholder="Apellido" required>
                           </div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-12 col-xs-12">
                           <div class="form-group">                        
                             <input name="email" id="email" type="email" class="form-control" placeholder="Email" required>
                           </div>
                         </div> 
-                      </div>
+                 
                        
                   </div>
                 </div>
 
-                <div class="col-md-6  ">
-                   <div class="col-md-12" style="padding-top: 30px;">
-                      <div class="form-group">
+                <div class="col-md-6 col-xs-12">
+
+                    <div class="col-md-12 col-xs-12" style="padding-top: 30px;">
+                      
                         <textarea name="mensaje" id="mensaje" style="border-radius: 4px; width: -webkit-fill-available;" rows="7" required></textarea>
-                      </div>
+                       
                     </div>
-                    <div class="col-md-12"  style="text-align: center;">
+                    <div class="col-md-12 col-xs-12"  style="text-align: center;">
                       <div id="success"></div>
                       <button  id="sendMessageButton"  type="submit" class="mu-readmore-btn">Enviar <img id="cargando" style="width:20px; " class="logo_web" src="<?=base_url()?>assets/img/loading.gif" alt="Logo img"></button>
                     </div>
                 </div>
+
               </form> 
 
             </div>

@@ -11,7 +11,7 @@ class Chequear
  
         if( strtolower($CI->uri->segment(1)) == 'administrador' )
         {
-        	if($CI->session->userdata('alimentary_id') == false)
+        	if($CI->session->userdata('sidom_id') == false)
 				redirect(base_url('index.php/login/index'));
         	 
         } 

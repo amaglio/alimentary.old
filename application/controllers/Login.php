@@ -31,9 +31,9 @@ public function procesa_logueo()
 	 
 		chrome_log("Paso validacion");
 
-		if( $this->input->post("usuario") == 'alimentary' &&  $this->input->post("clave") == 'alimentarymix2018'  )
+		if( $this->input->post("usuario") == 'sidom' &&  $this->input->post("clave") == 'sidom2018'  )
 		{
-			$this->session->set_userdata('alimentary_id',  "alimentary_id" );
+			$this->session->set_userdata('sidom_id',  "sidom_id" );
 			$this->session->set_flashdata('mensaje', 'Validacion exitosa');
 			redirect('Administrador/index/','refresh');
 		}
@@ -50,7 +50,7 @@ public function procesa_logueo()
 
 public function logout()
 {
-	$this->session->unset_userdata('alimentary_id');
+	$this->session->unset_userdata('sidom_id');
 
 	$this->db->close();
 	session_destroy();

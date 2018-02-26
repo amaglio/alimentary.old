@@ -685,8 +685,8 @@ img {
 .mu-menu-item-nav li .media .media-left a,
 .mu-menu-item-nav li .media .media-left a img {
   display: block;
-  width: 110px;
-  height: 110px;
+  width: 200px;
+  height: 200px;
 }
 
 .mu-menu-item-nav li .media .media-body .media-heading {

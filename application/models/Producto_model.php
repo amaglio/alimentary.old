@@ -47,7 +47,16 @@ class Producto_model extends CI_Model {
 		return $query->result_array();	
     }
 
+    function get_opiniones_facebook()
+    {
+    
+      $sql =  " SELECT *
+            FROM  opiniones_facebook p  " ;
 
+      $query = $this->db->query( $sql );
+
+    return $query->result_array();  
+    }
 
 
 }

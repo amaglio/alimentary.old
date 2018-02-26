@@ -4,7 +4,7 @@
  <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <title>Alimentary | Mix y frutos secos</title>
+    <title>SIDOM | Administrador Fundación Sidom  </title>
 <?php 
 foreach($css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
@@ -57,6 +57,14 @@ foreach($css_files as $file): ?>
 .report-div.success{
       background-color: white !important;
 }
+
+.dataTablesContainer{
+  font-size: 12px;  
+}
+
+td.actions{
+   white-space:inherit !important;
+}
 </style>
 
 </head>
@@ -75,7 +83,7 @@ foreach($css_files as $file): ?>
       <a class="navbar-brand" href="#">
       		<span style="    font-size: 25px;
     color: #0f585c;
-    letter-spacing: 3px;"> Alimentary  |  </span>
+    letter-spacing: 3px;"> SIDOM  |  </span>
       </a>
     </div>
 
@@ -83,17 +91,24 @@ foreach($css_files as $file): ?>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li  >
-        	<a href='<?php echo site_url('administrador/productos')?>'><i class="fa fa-lemon-o"></i> Producto <span class="sr-only">(current)</span></a>
+        	<a href='<?php echo site_url('administrador/educacion')?>'><i class="fa fa-lemon-o"></i> Educacion <span class="sr-only">(current)</span></a>
         </li>
         <li>
-        	<a href='<?php echo site_url('administrador/tipos_producto')?>'><i  class="fa fa-tags" ></i> Tipo de producto</a>
+        	<a href='<?php echo site_url('administrador/investigacion')?>'><i  class="fa fa-tags" ></i> Investigacion </a>
         </li>
         <li>
           <a href='<?php echo site_url('administrador/promociones')?>'><i class="fa fa-bullhorn"></i> Promociones</a>
         </li>
         <li>
+          <a href='<?php echo site_url('administrador/opiniones_facebook')?>'><i  class="fa fa-facebook-f" ></i> Opiniones facebook</a>
+        </li>
+         <li>
+          <a href='<?php echo site_url('administrador/contacto')?>'><i  class="fa fa-at" ></i> Contacto</a>
+        </li>
+        <li>
         	<a href='<?php echo site_url('login/logout')?>'><i  class="fa fa-power-off" ></i> Salir</a>
         </li>
+
         
       </ul>
   
@@ -106,15 +121,7 @@ foreach($css_files as $file): ?>
     <div>
 		<?php echo $output; ?>
     </div>
-
-
-  
-  <!-- <footer class="footer" style="border-top: 1px solid green ;     position: inherit;
-    margin-top: 20px;">
-  
-        <span class="text-muted" style="color: black ">&copy; 2018 Alimentarymix.com </span>
-      
-    </footer> -->
+ 
 
 </body>
 

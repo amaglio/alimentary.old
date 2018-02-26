@@ -48,7 +48,7 @@ $(function() {
                   $('#success').html("<div class='alert alert-danger'>");
                   $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                     .append("</button>");
-                  $('#success > .alert-danger').append($("<strong>").text("Ha ocurrido un error, por favor, intente mas tarde o escribinos a nuestro email: nyndecoratuvida@gmail.com."));
+                  $('#success > .alert-danger').append($("<strong>").text("Ha ocurrido un error, por favor, intente mas tarde o escribinos a nuestro email: contactoalimentary@gmail.com."));
                   $('#success > .alert-danger').append('</div>');
                   //clear all fields
                   $('#contactForm').trigger("reset");
@@ -61,7 +61,7 @@ $(function() {
                   $('#success').html("<div class='alert alert-danger'>");
                   $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                     .append("</button>");
-                  $('#success > .alert-danger').append($("<strong>").text("Ha ocurrido un error, por favor intente más tarde o escribinos a nuestro email: nyndecoratuvida@gmail.com."));
+                  $('#success > .alert-danger').append($("<strong>").text("Ha ocurrido un error, por favor intente más tarde o escribinos a nuestro email: contactoalimentary@gmail.com."));
                   $('#success > .alert-danger').append('</div>');
                   //clear all fields
                   $('#contactForm').trigger("reset");

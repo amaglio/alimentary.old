@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Alimentary | Administrador </title>
+    <title>SIDOM | Administrador </title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
      
     <!-- Latest compiled and minified CSS -->
@@ -58,7 +58,7 @@
     
     <div class="login-box">
       <div class="login-logo">
-        <img src="<?=base_url()?>assets/img/logo.jpg" style="height:60%; width:60% ;"> 
+        <img src="<?=base_url()?>assets/img/logo.jpg" style="  width:100% ;"> 
       </div><!-- /.login-logo -->
       <div class="login-box-body">
 

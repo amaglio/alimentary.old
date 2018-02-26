@@ -13,6 +13,7 @@ class Home extends CI_Controller {
 		$data['mix_granola'] = $this->Producto_model->get_mix_granola();
 		$data['frutos_secos'] = $this->Producto_model->get_frutos_secos();
 		$data['promociones'] = $this->Producto_model->get_promociones();
+		$data['opiniones_facebook'] = $this->Producto_model->get_opiniones_facebook();
 		$this->load->view('index.php',$data);
 	}
 
@@ -34,23 +35,40 @@ class Home extends CI_Controller {
 	        $this->load->library("email"); 
 
 
- 			$configuracion = array(
+ 			// $configuracion = array(
+    //             'protocol' => 'smtp',
+    //             'smtp_host' => 'ssl://smtp.googlemail.com',
+    //             'smtp_port' => 465,
+    //             'smtp_user' => 'digipayargentina@gmail.com',
+    //             'smtp_pass' => 'digipay2016',
+    //             'mailtype' => 'html',
+    //             'charset' => 'utf-8',
+    //             'newline' => "\r\n",
+    //          	'smtp_timeout' => 30,
+    //         );
+
+	        $configuracion = array(
                 'protocol' => 'smtp',
-                'smtp_host' => 'ssl://smtp.googlemail.com',
-                'smtp_port' => 465,
-                'smtp_user' => 'digipayargentina@gmail.com',
-                'smtp_pass' => 'digipay2016',
+                'smtp_host' => 'mail.alimentarymix.com',
+                'smtp_port' => 25,
+                'smtp_user' => 'info@alimentarymix.com',
+                'smtp_pass' => 'alimentarymix2018',
                 'mailtype' => 'html',
                 'charset' => 'utf-8',
-                'newline' => "\r\n"
+                'newline' => "\r\n",
+             	'smtp_timeout' => 30,
             );
-
 
 	        //Cargamos la configuración 
 
 	        $this->email->initialize($configuracion);
-	        $this->email->from("infoalimentar@gmail.com");
+	        $this->email->from("info@alimentarymix.com");
 	        $this->email->subject("Alimentary - Contacto web");
+
+	        
+	        $this->email->to("contactoalimentary@gmail.com");
+
+	        $this->email->cc('adrian.magliola@gmail.com');
 
 	        $mensaje = "";
 
@@ -64,7 +82,7 @@ class Home extends CI_Controller {
 			
 			$this->email->message($mensaje);
 
-	        $this->email->to("adrian.magliola@gmail.com"); 
+	        
 
 	        if( $this->email->send() ):
 
